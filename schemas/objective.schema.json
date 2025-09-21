@@ -1,0 +1,17 @@
+{
+  "$id": "objective.v1",
+  "type": "object",
+  "required": ["id", "title", "owner", "kpis", "deadline", "priority", "status"],
+  "properties": {
+    "id": {"type": "string"},
+    "title": {"type": "string"},
+    "description": {"type": "string"},
+    "owner": {"type": "string"},
+    "priority": {"type": "string", "enum": ["P0", "P1", "P2"]},
+    "deadline": {"type": "string", "format": "date"},
+    "kpis": {"type": "array", "items": {"type": "string"}},
+    "status": {"type": "string", "enum": ["planned", "active", "blocked", "done"]},
+    "links": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

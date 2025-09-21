@@ -1,0 +1,11 @@
+{
+  "goal_to_projects": [
+    {"goal_regex": "(?i)\\bMRR\\b|revenue|£1k", "projects": ["prj-vantis", "prj-coralhub"]},
+    {"goal_regex": "(?i)hydrogen|energy", "projects": ["prj-viridion"]}
+  ],
+  "project_to_agents": {
+    "prj-vantis": ["planner", "sales", "analyst", "finops"],
+    "prj-coralhub": ["planner", "builder", "support", "analyst"],
+    "prj-viridion": ["researcher", "analyst"]
+  }
+}

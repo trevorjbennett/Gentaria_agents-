@@ -1,0 +1,19 @@
+{
+  "$id": "run.v1",
+  "type": "object",
+  "required": ["id", "task_id", "agent", "started_at", "ended_at", "cost_gbp", "status"],
+  "properties": {
+    "id": {"type": "string"},
+    "task_id": {"type": "string"},
+    "agent": {"type": "string"},
+    "started_at": {"type": "string", "format": "date-time"},
+    "ended_at": {"type": "string", "format": "date-time"},
+    "inputs": {"type": "object"},
+    "outputs": {"type": "object"},
+    "cost_gbp": {"type": "number", "minimum": 0},
+    "status": {"type": "string", "enum": ["ok", "error", "skipped"]},
+    "notes": {"type": "string"},
+    "citations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

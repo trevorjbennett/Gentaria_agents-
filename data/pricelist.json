@@ -1,0 +1,10 @@
+{
+  "month_budget_gbp": 300,
+  "items": {
+    "openai_api_token": "0-50 pay-as-you-go",
+    "firebase_free_tier": "0",
+    "email_sender": "10",
+    "domain_dns": "10",
+    "misc_tools_buffer": "30"
+  }
+}

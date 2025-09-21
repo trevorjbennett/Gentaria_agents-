@@ -1,0 +1,21 @@
+{
+  "$id": "policy.v1",
+  "type": "object",
+  "required": ["id", "name", "rules"],
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["when", "then"],
+        "properties": {
+          "when": {"type": "object"},
+          "then": {"type": "object"}
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,26 @@
+{
+  "$id": "routing.v1",
+  "type": "object",
+  "required": ["goal_to_projects", "project_to_agents"],
+  "properties": {
+    "goal_to_projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["goal_regex", "projects"],
+        "properties": {
+          "goal_regex": {"type": "string"},
+          "projects": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "project_to_agents": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {"type": "string"}
+      }
+    }
+  },
+  "additionalProperties": false
+}

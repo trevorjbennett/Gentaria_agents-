@@ -1,0 +1,33 @@
+{
+  "$id": "task.v1",
+  "type": "object",
+  "required": ["id", "project_id", "title", "assignee", "tooling", "cost_cap_gbp", "risk_tier", "status"],
+  "properties": {
+    "id": {"type": "string"},
+    "project_id": {"type": "string"},
+    "title": {"type": "string"},
+    "details": {"type": "string"},
+    "assignee": {
+      "type": "string",
+      "enum": [
+        "orchestrator",
+        "planner",
+        "researcher",
+        "builder",
+        "analyst",
+        "sales",
+        "support",
+        "finops",
+        "risk",
+        "memory"
+      ]
+    },
+    "tooling": {"type": "array", "items": {"type": "string"}},
+    "risk_tier": {"type": "string", "enum": ["A", "B", "C"]},
+    "cost_cap_gbp": {"type": "number", "minimum": 0},
+    "status": {"type": "string", "enum": ["todo", "doing", "review", "done", "blocked"]},
+    "artifacts": {"type": "array", "items": {"type": "string"}},
+    "acceptance": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,28 @@
+{
+  "$id": "project.v1",
+  "type": "object",
+  "required": ["id", "name", "domain", "owner", "stage", "risk", "budget_monthly", "guardrails", "slas"],
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "domain": {"type": "string", "enum": ["vantis", "coralhub", "palm", "viridion", "predicta", "baypay"]},
+    "description": {"type": "string"},
+    "owner": {"type": "string"},
+    "stage": {"type": "string", "enum": ["idea", "mvp", "pilot", "ga", "paused"]},
+    "risk": {"type": "string", "enum": ["low", "med", "high"]},
+    "budget_monthly": {"type": "number", "minimum": 0},
+    "guardrails": {"type": "array", "items": {"type": "string"}},
+    "slas": {
+      "type": "object",
+      "properties": {
+        "latency_ms": {"type": "number"},
+        "cost_ceiling_gbp": {"type": "number"},
+        "error_rate_target": {"type": "number"}
+      }
+    },
+    "kpis": {"type": "array", "items": {"type": "string"}},
+    "data_access": {"type": "array", "items": {"type": "string"}},
+    "hitl_required": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}
